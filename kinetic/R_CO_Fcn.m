@@ -28,8 +28,8 @@ function R_CO = R_CO_Fcn(C_gas, C_solid, PPT, T, data)
 
 % ------------------------------------------------------------------------- 
 
-    k_s3 = 1.097e-4*exp(-26505/(R*T));
-    k_s4 = 4.18e-3*exp (-23666/(R*T));
+    k_s3 = 100*(1.097e-4*exp(-26505/(R*T)));
+    k_s4 = 100*(4.18e-3*exp (-23666/(R*T)));
 
 % ------------------------------------------------------------------------- 
 
@@ -42,7 +42,7 @@ function R_CO = R_CO_Fcn(C_gas, C_solid, PPT, T, data)
     r_CH4_m  = r_CH4m_Fcn(PCO, PH2, T, R);
     r_rf_CO2 = r_rfCO2_Fcn(PCH4, PCO2, T, R);
     r_g_CO2  = r_gCO2_Fcn(PCO2, PCO, T, R);
-    r_g_H2O  = r_gH2O_Fcn(PH2O, PCO, PH2, T, R);
+    r_g_H2O  = r_gH2O_Fcn(PCH4, PH2O, PCO, PH2, T, R);
 
 % -------------------------------------------------------------------------
 

@@ -28,7 +28,7 @@ function R_H2O = R_H2O_Fcn(C_gas, C_solid, PPT, T, data)
 
 % ------------------------------------------------------------------------- 
 
-    k_s2 = 1.31e-4*exp(-26413/(R*T));
+    k_s2 = 100*(1.31e-4*exp(-26413/(R*T)));
 
 % ------------------------------------------------------------------------- 
 
@@ -38,7 +38,7 @@ function R_H2O = R_H2O_Fcn(C_gas, C_solid, PPT, T, data)
 
     r_rf_H2O = r_rfH2O_Fcn(PCH4, PH2O, PH2, PCO, T, R);
     r_WGS    = r_WGS_Fcn(PCO2, PH2, PCO, PH2O, T, R);
-    r_g_H2O  = r_gH2O_Fcn(PH2O, PCO, PH2, T, R);
+    r_g_H2O  = r_gH2O_Fcn(PCH4, PH2O, PCO, PH2, T, R);
 
 % -------------------------------------------------------------------------
 

@@ -29,9 +29,9 @@ function R_H2 = R_H2_Fcn(C_gas, C_solid, PPT, T, data)
 
 % ------------------------------------------------------------------------- 
 
-    k_s1 = 4.66*exp(-77416/(R*T));
-    k_s2 = 1.31e-4*exp(-26413/(R*T));
-    k_s4 = 4.18e-3*exp(-23666/(R*T));
+    k_s1 = 100*(4.66*exp(-77416/(R*T)));
+    k_s2 = 100*(1.31e-4*exp(-26413/(R*T)));
+    k_s4 = 100*(4.18e-3*exp(-23666/(R*T)));
 
 % ------------------------------------------------------------------------- 
 
@@ -44,13 +44,15 @@ function R_H2 = R_H2_Fcn(C_gas, C_solid, PPT, T, data)
     r_CH4_m  = r_CH4m_Fcn(PCO, PH2, T, R);
     r_rf_CO2 = r_rfCO2_Fcn(PCH4, PCO2, T, R);
     r_cd     = r_cd_Fcn(PCH4, PH2, T, R);
-    r_g_H2O  = r_gH2O_Fcn(PH2O, PCO, PH2, T, R);
+    r_g_H2O  = r_gH2O_Fcn(PCH4, PH2O, PCO, PH2, T, R);
 
 % -------------------------------------------------------------------------
 
-    tmp_1 = (2*(k_s1 + k_s4)*C_CH4 - ((k_s2*C_H2)/C_Ni));
+    tmp_1 = ((k_s2*C_H2)/C_Ni);
+    if C_Ni == 0, tmp_1 = 0; end
+    tmp_2 = (2*(k_s1 + k_s4)*C_CH4 - tmp_1);
 
-    R_H2 = (a0*(1 - X)*tmp_1*C_NiO + 3*r_rf_H2O + r_WGS - 3*r_CH4_m ... 
+    R_H2 = (a0*(1 - X)*tmp_2*C_NiO + 3*r_rf_H2O + r_WGS - 3*r_CH4_m ... 
             + 2*r_rf_CO2 + 2*r_cd + r_g_H2O)*C_Ni;
 
 % -------------------------------------------------------------------------

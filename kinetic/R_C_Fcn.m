@@ -19,8 +19,8 @@ function R_C = R_C_Fcn(C_solid, PPT, T, data)
 
     r_cd     = r_cd_Fcn(PCH4, PH2, T, R);
     r_g_CO2  = r_gCO2_Fcn(PCO2, PCO, T, R);
-    r_g_H2O  = r_gH2O_Fcn(PH2O, PCO, PH2, T, R);
-
+    r_g_H2O  = r_gH2O_Fcn(PCH4, PH2O, PCO, PH2, T, R);
+    
 % -------------------------------------------------------------------------
 
     R_C = (r_cd - r_g_CO2 - r_g_H2O)*C_Ni;

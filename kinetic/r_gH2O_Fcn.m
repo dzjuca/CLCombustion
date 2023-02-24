@@ -1,4 +1,4 @@
-function r_gH2O = r_gH2O_Fcn(PH2O, PCO, PH2, T, R)
+function r_gH2O = r_gH2O_Fcn(PCH4, PH2O, PCO, PH2, T, R)
 % -------------------------------------------------------------------------
     % r_gH2O_Fcn is a function that calculates the reaction rate of ...
     % ----------------------------| input |--------------------------------

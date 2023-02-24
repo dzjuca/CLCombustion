@@ -7,9 +7,9 @@ function S = JPatternFcn(Global)
   % Set independent, dependent variables for the calculation 
   % of the sparsity pattern
 % -------------------------------------------------------------------------
-  zg      = Global.zg;
+
   Num_esp = Global.Num_esp;
-  index1  = length(zg);
+  index1  = Global.n;
   tbase   = 0;
 
   for i = 1:(index1*Num_esp)
