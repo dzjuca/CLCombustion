@@ -34,7 +34,8 @@ function graphsCgbAllSpeciesFcn(t,u, Global)
     CiBW(:,:,1) = u1b; CiBW(:,:,2) = u2b; CiBW(:,:,3) = u3b;
     CiBW(:,:,4) = u4b; CiBW(:,:,5) = u5b; 
 % -------------------------------------------------------------------------
-    TAG1 = {'$C_{i}\left(\frac{mol}{cm^{3}} \right)$'}; 
+    TAG1 = {'$C_{i}\left( \frac{mol}{cm^{3}} \right)_{\left[ i=CH_{4},\  CO_{2},\  H_{2}O\right]  }  \  $', ...
+            '$C_{i}\left( \frac{mol}{cm^{3}} \right)_{\left[ i=CO,\  H_{2}\right]  }  \  $'}; 
     TAG3 = {'C_Time','C_Space'};
     TAG5 = {'graphs/Concentration'};
 % -------------------------------------------------------------------------
@@ -64,31 +65,39 @@ function graphsCgbAllSpeciesFcn(t,u, Global)
     set(fig1, 'Color', 'w') 
     % ---------------------------------------------------------------------
     hold on
-
+        yyaxis left
         plot(tmin,CiBW(:,n,1)','ko-','MarkerSize',MZ1);
         plot(tmin,CiBW(:,n,2)','ks-','MarkerSize',MZ1);
-        plot(tmin,CiBW(:,n,3)','kp-','MarkerSize',MZ1);
-        plot(tmin,CiBW(:,n,4)','kd-','MarkerSize',MZ1);
         plot(tmin,CiBW(:,n,5)','k*-','MarkerSize',MZ1);
-
-        ley1 = {'$C{H_4}$','$C{O_2}$','$CO$','${H_2}$',         ...
-            '${H_2}O$'};
-
-        legend(ley1,'Interpreter','Latex','Location','north',   ...
-            'Orientation','horizontal','FontSize',LFZ)
-
-        xlabel('$time\left( {s} \right)$','FontSize',XLFZ,      ...
-            'interpreter','Latex')
 
         ylabel(TAG1{1},'FontSize',YLFZ,'interpreter','Latex')
 
-        max1 = max(max(CiBW(:,n,:)));
-        max1 = max1 + max1*0.15;
+        max_1 = max(max(CiBW(:,n,:)));
+        max1 = max_1 + max_1*0.15;
         ylim([0 max1])
 
-        max2 = max(tmin); 
+        yyaxis right
+        plot(tmin,CiBW(:,n,3)','kp-','MarkerSize',MZ1);
+        plot(tmin,CiBW(:,n,4)','kd-','MarkerSize',MZ1);
+
+        ylabel(TAG1{2},'FontSize',YLFZ,'interpreter','Latex')
+        max_2_1 = max(CiBW(:,n,3));
+        max_2_2 = max(CiBW(:,n,4));
+        max_2 = max(max_2_1,max_2_2);
+        max2  = max_2 + max_2 + max_2;
+        ylim([0 max2])
+
+        xlabel('$time\left( {s} \right)$','FontSize',XLFZ,      ...
+        'interpreter','Latex')
+
+        ley1 = {'$C{H_4}$','$C{O_2}$','$CO$','${H_2}$',         ...
+        '${H_2}O$'};
+        legend(ley1,'Interpreter','Latex','Location','north',   ...
+        'Orientation','horizontal','FontSize',LFZ)
+
+        max3 = max(tmin); 
         % max2 = max2 + max2*0.05;
-        xlim([0 max2])
+        xlim([0 max3])
 
     hold off
     print(fig1,'-dpdf','-r500',dir)
