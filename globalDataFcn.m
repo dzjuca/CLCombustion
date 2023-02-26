@@ -5,7 +5,7 @@ function Global = globalDataFcn()
 % -------------------- | General Data |------------------------------------
       Global.R = 8.314472e-3;         % Universal Gas Constant    [kJ/molK]    
       Global.P = 1.01325;             % Pressure                      [bar]   
-      Global.Tbed    = 810;           % Temperature                     [K]
+      Global.Tbed    = (623 + 273.15);% Temperature                     [K]
       Global.g       = 981.0;         % Gravity                     [cm/s2]
       Global.Num_esp = 18;            % number of species               [#]
       Global.gen     = 6;             % gas species number              [#]
@@ -14,10 +14,11 @@ function Global = globalDataFcn()
       Global.n       = 30;            % mesh points number              [#] 
 % ----------| Flow rate and concentration of species |---------------------
 % ----- total feed flow in the reactor's bottom ---------------------------
-      Global.QT_in = 1200;           %                         [STP ml/min]
+         Global.QT_in = 1200;           %                         [STP ml/min]
+      %  Global.QT_in = (pi*(4.6/2)^2)*4*60;
 % ----- flow feed ratio for each specie -----------------------------------
-      CH4in_rat = 10.0;               % CH4                             [%]
-      N2in_rat  = 90.0;               % N2                              [%]
+      CH4in_rat = 50.0;               % CH4                             [%]
+      N2in_rat  = 50.0;               % N2                              [%]
 % ----- flow feed for each specie -----------------------------------------
       FCH4in = (CH4in_rat/100)*Global.QT_in/(22.4*1000*60); %       [mol/s]
       FN2in  = ( N2in_rat/100)*Global.QT_in/(22.4*1000*60); %       [mol/s]
@@ -41,7 +42,7 @@ function Global = globalDataFcn()
       Global.fDynamics.usg0 = Global.QT_in./...
                               (Global.reactor.rArea*60.0); 
                                      % In-Flow rate                  [cm/s]
-      Global.fDynamics.usg0_umf = 6; % ratio usg0/umf                    []
+      Global.fDynamics.usg0_umf = 5; % ratio usg0/umf                    []
       Global.fDynamics.umf  = Global.fDynamics.usg0/... 
                               Global.fDynamics.usg0_umf;
                               % minimum fluidization velocity        [cm/s] 

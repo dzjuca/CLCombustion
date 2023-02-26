@@ -10,6 +10,7 @@ function u = initialConditions(Global)
     Num_esp = Global.Num_esp;
     n       = Global.n;
     N2in    = Global.N2in;
+    CH4in   = Global.CH4in;
     u       = zeros((Num_esp*n),1);
 % ---------- gas species - Bubble & Wake phases----------------------------
     u1b = zeros(n,1);   u2b = zeros(n,1); u3b = zeros(n,1);   
@@ -24,7 +25,7 @@ function u = initialConditions(Global)
 % -------------------------------------------------------------------------
 % ----------------------------| gas phase |--------------------------------
 % ---------- u1b = CH4 bubble ---------------------------------------------
-    for i = 1:n, u1b(i) = 0.00;    u(i+0*n)  = u1b(i);     end
+    for i = 1:n, u1b(i) = CH4in;    u(i+0*n)  = u1b(i);    end
 % ---------- u2b = CO2 bubble ---------------------------------------------
     for i = 1:n, u2b(i) = 0.00;    u(i+1*n)  = u2b(i);     end
 % ---------- u3b = CO bubble ---------------------------------------------- 
@@ -36,7 +37,7 @@ function u = initialConditions(Global)
 % ---------- u6b = N2 bubble ----------------------------------------------
     for i = 1:n, u6b(i) = N2in;    u(i+5*n)  = u6b(i);     end
 % ---------- u1e = CH4 emulsion -------------------------------------------
-    for i = 1:n, u1e(i) = 0.00;    u(i+6*n)  = u1e(i);     end
+    for i = 1:n, u1e(i) = CH4in;    u(i+6*n)  = u1e(i);    end
 % ---------- u2e = CO2 emulsion -------------------------------------------
     for i = 1:n, u2e(i) = 0.00;    u(i+7*n)  = u2e(i);     end
 % ---------- u3e = CO emulsion --------------------------------------------
