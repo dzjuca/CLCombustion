@@ -175,7 +175,7 @@ function graphsFmgAllSpeciesFcn(t, u, Global)
         ylim([0 0.6])
 
         max2 = max(zg); 
-        xlim([0 100])
+        xlim([0 max2])
 
     hold off
     print(fig2,'-dpdf','-r500',dir)

@@ -8,7 +8,7 @@ function R_Ni = R_Ni_Fcn(C_gas, C_solid, T, data)
     %  R = Universal Gas Constant                                  [J/molK]
 
     % ----------------------------| output |-------------------------------
-    % R_Ni    =  the reaction rate                          [kmolNi/kgNi s]
+    % R_Ni    =  the reaction rate                              [gNi/g-c s]
 % -------------------------------------------------------------------------
 
     R       = data.R; 
@@ -36,7 +36,8 @@ function R_Ni = R_Ni_Fcn(C_gas, C_solid, T, data)
 % ------------------------------------------------------------------------- 
 
     tmp_1 = (2*k_s1 + k_s4)*C_CH4*C_Ni + k_s2*C_H2 + k_s3*C_CO;
-    R_Ni = a0*(1 - X)*tmp_1*C_NiO;
+    R_Ni_1 = a0*(1 - X)*tmp_1*C_NiO;                         %[molNi/g-c s]
+    R_Ni = R_Ni_1*58.69;                                       %[gNi/g-c s]
 
 % ------------------------------------------------------------------------- 
 end
