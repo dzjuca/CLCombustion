@@ -13,7 +13,7 @@
     u0   = initialConditions(Global);
 % ---------- time simulation (s) ------------------------------------------
     t0   = 0.0; 
-    tf   = 7*60; 
+    tf   = 60; 
     tout = linspace(t0,tf,100)';
 % ---------- Implicit (sparse stiff) integration --------------------------
     reltol   = 1.0e-6; abstol = 1.0e-6;  
@@ -32,5 +32,4 @@
     graphsCgeAllSpeciesFcn(t,u, Global)
     graphsCswAllSpeciesFcn(t,u, Global)
     graphsCseAllSpeciesFcn(t,u, Global)
-
 % ---------------------------| End Program |-------------------------------
