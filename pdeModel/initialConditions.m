@@ -12,7 +12,7 @@ function u = initialConditions(Global)
     N2in    = Global.N2in;
     CH4in   = Global.CH4in;
     u       = zeros((Num_esp*n),1);
-    C_NiO_o = Global.carrier.C_NiO_o
+    C_NiO_o = Global.carrier.C_NiO_o;
 % ---------- gas species - Bubble & Wake phases----------------------------
     u1b = zeros(n,1);   u2b = zeros(n,1); u3b = zeros(n,1);   
     u4b = zeros(n,1);   u5b = zeros(n,1); u6b = zeros(n,1);

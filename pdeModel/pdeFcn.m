@@ -36,9 +36,12 @@ function ut = pdeFcn(t,u,Global)
     u1e(1) = Global.CH4in; u2e(1) = 0.000; u3e(1) = 0.000;
     u4e(1) = 0.000;        u5e(1) = 0.000; u6e(1) = Global.N2in;
 % ---------- z = 0 solid - wake & emulsion phases -------------------------
-    u7w(1) = u7e(1); u8w(1) = u8e(1); u9w(1) = u9e(1);
+    u7w(1) = u7e(1); 
+    u8w(1) = u8e(1); 
+    u9w(1) = u9e(1);
 % ---------- z = Zg solid - wake & emulsion phases ------------------------
-    u7e(index1) = u7w(index1); u8e(index1) = u8w(index1);
+    u7e(index1) = u7w(index1); 
+    u8e(index1) = u8w(index1);
     u9e(index1) = u9w(index1);
 % --------------------| Fluidized Bed |------------------------------------   
 % ---------- bubble - ubFcn.m ---------------------------------------------
@@ -82,10 +85,19 @@ function ut = pdeFcn(t,u,Global)
     u1et(1) = 0; u2et(1) = 0; u3et(1) = 0; 
     u4et(1) = 0; u5et(1) = 0; u6et(1) = 0;
 % ---------- z = 0 solid - wake & emulsion phases -------------------------
-    u7wt(1) = u7et(1); u8wt(1) = u8et(1); u9wt(1) = u9et(1);
+    %u7wt(1) = u7et(1); 
+    %u8wt(1) = u8et(1); 
+    %u9wt(1) = u9et(1);
+    u7wt(1) = 0;
+    u8wt(1) = 0;
+    u9wt(1) = 0;
 % ---------- z = Zg solid - wake & emulsion phase -------------------------
-    u7et(index1) = u7wt(index1); u8et(index1) = u8wt(index1);
-    u9et(index1) = u9wt(index1);
+    %u7et(index1) = u7wt(index1); 
+    %u8et(index1) = u8wt(index1);
+    %u9et(index1) = u9wt(index1);
+    u7et(index1) = 0;
+    u8et(index1) = 0;
+    u9et(index1) = 0;
 % --------------------| Temporal Variation Vector dudt |-------------------
     ut = [u1bt; u2bt; u3bt; u4bt; u5bt; u6bt; ...
            u1et; u2et; u3et; u4et; u5et; u6et; 
