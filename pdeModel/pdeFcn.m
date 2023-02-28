@@ -88,16 +88,14 @@ function ut = pdeFcn(t,u,Global)
     u7wt(1) = u7et(1); 
     u8wt(1) = u8et(1); 
     u9wt(1) = u9et(1);
-
 % ---------- z = Zg solid - wake & emulsion phase -------------------------
     u7et(index1) = u7wt(index1); 
     u8et(index1) = u8wt(index1);
     u9et(index1) = u9wt(index1);
-
 % --------------------| Temporal Variation Vector dudt |-------------------
     ut = [u1bt; u2bt; u3bt; u4bt; u5bt; u6bt; ...
-           u1et; u2et; u3et; u4et; u5et; u6et; 
-           u7wt; u8wt; u9wt; u7et; u8et; u9et];
+          u1et; u2et; u3et; u4et; u5et; u6et; 
+          u7wt; u8wt; u9wt; u7et; u8et; u9et];
 % --------------------| Number Calls To pdeFcn |---------------------------
     ncall.incrementNcall();
     disp([ncall.getNcall, t]);
