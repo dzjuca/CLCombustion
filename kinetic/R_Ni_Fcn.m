@@ -31,7 +31,8 @@ function R_Ni = R_Ni_Fcn(C_gas, C_solid, T, data)
     
 % ------------------------------------------------------------------------- 
 
-    X = conversionFcn(C_NiO, C_NiO_o);
+%   X = conversionFcn(C_NiO, C_NiO_o);
+    X = conversionFcn(C_NiO, C_NiO_o, data);
 
 % ------------------------------------------------------------------------- 
 

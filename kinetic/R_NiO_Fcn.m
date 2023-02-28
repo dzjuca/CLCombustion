@@ -30,7 +30,8 @@ function R_NiO = R_NiO_Fcn(C_gas, C_solid, T, data)
     k_s4 = 100*(4.18e-3*exp (-23666/(R*T)));
 % ------------------------------------------------------------------------- 
 
-    X = conversionFcn(C_NiO, C_NiO_o);
+%   X = conversionFcn(C_NiO, C_NiO_o);
+    X = conversionFcn(C_NiO, C_NiO_o, data);
 
 % ------------------------------------------------------------------------- 
 
