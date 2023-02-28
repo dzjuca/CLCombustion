@@ -57,6 +57,7 @@ function Global = globalDataFcn()
       Global.carrier.bulkDensity = 1.1;   % particle density        [g/cm3]
       Global.carrier.density     = 0.785; % particle density        [g/cm3]
       Global.carrier.sphericity  = 0.95;  % particle sphericity          []
+      Global.carrier.conversion  = 0.36;  % NiO conversion           []
 % ---------- molar mass for each specie -----------------------------------
       Global.MMASS(1) = 16.0426;      % - CH4                       [g/mol]
       Global.MMASS(2) = 44.0090;      % - CO2                       [g/mol]
