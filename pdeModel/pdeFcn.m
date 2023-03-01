@@ -94,8 +94,8 @@ function ut = pdeFcn(t,u,Global)
     u9et(index1) = u9wt(index1);
 % --------------------| Temporal Variation Vector dudt |-------------------
     ut = [u1bt; u2bt; u3bt; u4bt; u5bt; u6bt; ...
-           u1et; u2et; u3et; u4et; u5et; u6et; 
-           u7wt; u8wt; u9wt; u7et; u8et; u9et];
+          u1et; u2et; u3et; u4et; u5et; u6et; 
+          u7wt; u8wt; u9wt; u7et; u8et; u9et];
 % --------------------| Number Calls To pdeFcn |---------------------------
     ncall.incrementNcall();
     disp([ncall.getNcall, t]);

@@ -32,8 +32,7 @@ function R_CH4 = R_CH4_Fcn(C_gas, C_solid, PPT, T, data)
 
 % ------------------------------------------------------------------------- 
 
-%   X = conversionFcn(C_NiO, C_NiO_o);
-    X = conversionFcn(C_NiO, C_NiO_o, data);
+    X = conversionFcn(C_NiO, C_NiO_o);
 
 % -------------------------------------------------------------------------
 

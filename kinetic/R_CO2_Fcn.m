@@ -34,8 +34,7 @@ function R_CO2 = R_CO2_Fcn(C_gas, C_solid, PPT, T, data)
 
 % ------------------------------------------------------------------------- 
 
-%   X = conversionFcn(C_NiO, C_NiO_o);
-    X = conversionFcn(C_NiO, C_NiO_o, data);
+    X = conversionFcn(C_NiO, C_NiO_o);
 
 % ------------------------------------------------------------------------- 
 
