@@ -24,21 +24,29 @@ function kinetic = kineticFcn(C_gas, C_solid, T, Global, id)
         T_z       = T(i);
 % -------------------------------------------------------------------------
         if     strcmp(id,'CH4')
-                kinetic(i,1) = R_CH4_Fcn(C_gas_z,C_solid_z,PPT,T_z,data);
+                 kinetic(i,1) = R_CH4_Fcn(C_gas_z,C_solid_z,PPT,T_z,data);
+                % kinetic(i,1) = 0.0;
         elseif strcmp(id,'CO2')
                 kinetic(i,1) = R_CO2_Fcn(C_gas_z,C_solid_z,PPT,T_z,data);
+                %kinetic(i,1) = 0.0;
         elseif strcmp(id,'CO')
                 kinetic(i,1) = R_CO_Fcn(C_gas_z,C_solid_z,PPT,T_z,data);
+                %kinetic(i,1) = 0.0;
         elseif strcmp(id,'H2')
                 kinetic(i,1) = R_H2_Fcn(C_gas_z,C_solid_z,PPT,T_z,data);
+                %kinetic(i,1) = 0.0;
         elseif strcmp(id,'H2O')
                 kinetic(i,1) = R_H2O_Fcn(C_gas_z,C_solid_z,PPT,T_z,data);
+                %kinetic(i,1) = 0.0;
         elseif strcmp(id,'NiO')
                 kinetic(i,1) = R_NiO_Fcn(C_gas_z,C_solid_z,T_z,data);
+                %kinetic(i,1) = 0.0;
         elseif strcmp(id,'Ni')
                 kinetic(i,1) = R_Ni_Fcn(C_gas_z,C_solid_z,T_z,data);
+                %kinetic(i,1) = 0.0;
         elseif strcmp(id,'C')
                 kinetic(i,1) = R_C_Fcn(C_solid_z,PPT,T_z, data);
+                %kinetic(i,1) = 0.0;
         elseif strcmp(id,'N2')
                 kinetic(i,1) = 0.0;
         else
@@ -46,5 +54,13 @@ function kinetic = kineticFcn(C_gas, C_solid, T, Global, id)
         end 
 % -------------------------------------------------------------------------
     end
+
+%     if strcmp (id,'Ni')
+% 
+%         disp([kinetic(1),kinetic(20),kinetic(40)])
+% 
+%     end
+
+                        
 % ------------------------------------------------------------------------- 
 end

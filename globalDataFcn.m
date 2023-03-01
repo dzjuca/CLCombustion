@@ -11,7 +11,7 @@ function Global = globalDataFcn()
       Global.gen     = 6;             % gas species number              [#]
       Global.sen     = 3;             % solid species number            [#]
       Global.iterations = Iterations.getInstance();% number of iterations
-      Global.n       = 30;            % mesh points number              [#] 
+      Global.n       = 50;            % mesh points number              [#] 
 % ----------| Flow rate and concentration of species |---------------------
 % ----- total feed flow in the reactor's bottom ---------------------------
          Global.QT_in = 1200;           %                         [STP ml/min]

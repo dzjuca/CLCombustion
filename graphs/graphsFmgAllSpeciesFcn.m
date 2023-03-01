@@ -102,25 +102,21 @@ function graphsFmgAllSpeciesFcn(t, u, Global)
     set(fig1, 'Color', 'w') 
     % ---------------------------------------------------------------------
     hold on
-        yyaxis left
+
         plot(tmin,x1(:,n)','ko-','MarkerSize',MZ1); % CH4
         plot(tmin,x2(:,n)','ks-','MarkerSize',MZ1); % CO2
-        plot(tmin,x5(:,n)','k*-','MarkerSize',MZ1); % H2O
-
-        ylabel(TAG1{1},'FontSize',YLFZ,'interpreter','Latex')
-        ylim([0 0.6])
-
-        yyaxis right
         plot(tmin,x3(:,n)','kp-','MarkerSize',MZ1); % CO
         plot(tmin,x4(:,n)','kd-','MarkerSize',MZ1); % H2
+        plot(tmin,x5(:,n)','k*-','MarkerSize',MZ1); % H2O
 
-        ylabel(TAG1{2},'FontSize',YLFZ,'interpreter','Latex')
-        ylim([0 0.3])
+        ylabel(TAG1{3},'FontSize',YLFZ,'interpreter','Latex')
+        ylim([0 0.6])
+
 
         xlabel('$time\left( {s} \right)$','FontSize',XLFZ,      ...
         'interpreter','Latex')
 
-        ley1 = {'$C{H_4}$','$C{O_2}$','${H_2}O$','$CO$','${H_2}$'};
+        ley1 = {'$C{H_4}$','$C{O_2}$','$CO$','${H_2}$','${H_2}O$'};
         legend(ley1,'Interpreter','Latex','Location','north',   ...
         'Orientation','horizontal','FontSize',LFZ)
 
