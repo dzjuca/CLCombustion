@@ -14,8 +14,10 @@ function Global = globalDataFcn()
       Global.n       = 50;            % mesh points number              [#] 
 % ----------| Flow rate and concentration of species |---------------------
 % ----- total feed flow in the reactor's bottom ---------------------------
-         Global.QT_in = 1200;           %                         [STP ml/min]
-      %  Global.QT_in = (pi*(4.6/2)^2)*4*60;
+      %  Global.QT_in = 1200;           %  condicion_1         [STP ml/min]
+      %  Global.QT_in = (pi*(4.6/2)^2)*4*60; % condicion_2     [STP ml/min]
+      %  Global.QT_in = (pi*(4.6/2)^2)*3.4*60; % condicion_3   [STP ml/min]
+         Global.QT_in = (pi*(4.6/2)^2)*3.3*60; % condicion_4   [STP ml/min]
 % ----- flow feed ratio for each specie -----------------------------------
       CH4in_rat = 50.0;               % CH4                             [%]
       N2in_rat  = 50.0;               % N2                              [%]
@@ -51,7 +53,7 @@ function Global = globalDataFcn()
 % ---------- Carrier Data -------------------------------------------------
       Global.carrier.R       = 8.314472;  % Universal Gas Constant [J/molK] 
       Global.carrier.a0      = 1020000;   % specific surface area   [cm2/g]
-      Global.carrier.C_NiO_o = 0.15;      % NiO concentration    [gNiO/g-c]
+      Global.carrier.C_NiO_o = 0.05;      % NiO concentration    [gNiO/g-c]
       Global.carrier.load    = 300;   % catalyst weight                 [g]
       Global.carrier.dp          = 0.014; % particle diameter          [cm]
       Global.carrier.bulkDensity = 1.1;   % particle density        [g/cm3]

@@ -38,7 +38,7 @@ function R_NiO = R_NiO_Fcn(C_gas, C_solid, T, data)
 
     R_NiO_1 = -a0*(1 - X)*tmp_1*C_NiO;                      %[molNiO/g-c s]
     %R_NiO   = R_NiO_1*74.68;                                  %[gNiO/g-c s]
-    R_NiO   = R_NiO_1*1; 
+     R_NiO   = R_NiO_1*1; 
 % ------------------------------------------------------------------------- 
 end
 

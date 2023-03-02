@@ -113,7 +113,7 @@ function graphsFmgAllSpeciesFcn(t, u, Global)
         ylim([0 0.6])
 
 
-        xlabel('$time\left( {s} \right)$','FontSize',XLFZ,      ...
+        xlabel('$time\left( {min} \right)$','FontSize',XLFZ,      ...
         'interpreter','Latex')
 
         ley1 = {'$C{H_4}$','$C{O_2}$','$CO$','${H_2}$','${H_2}O$'};
